@@ -18,4 +18,5 @@ jobs:
      - name: Checkout code
      -  run: |
           cd Lab1-2
+          make test
           ./test
