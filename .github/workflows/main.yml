@@ -14,5 +14,5 @@ jobs:
         
       - run: |
           cd Lab1-2/
-          make Lab1-2test
+          make test
           ./test
