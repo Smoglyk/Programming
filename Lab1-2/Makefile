@@ -1,5 +1,4 @@
-main: main.c
-   gcc -o main main.c
-
-test: main.c main_test.c
-   gcc  -o test -Dmain=_main main.c main_test.c
+lab1: main.c
+	gcc -ansi main.c -o main
+lab1test: main.c main_test.c
+	gcc -ansi main_test.c main.c -o test -Dmain=_main
