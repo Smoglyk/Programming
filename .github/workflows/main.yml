@@ -15,7 +15,7 @@ jobs:
     - name: make
       run: |
             cd Lab1-2
-            make Lab1-2_Test
+            make Lab1-2test
     - run: |
            cd Lab1-2 
            ./Lab1-2_Test
