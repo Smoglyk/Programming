@@ -1,4 +1,4 @@
-lab1: main.c
-	gcc -ansi main.c -o main
-lab1test: main.c main_test.c
-	gcc -ansi main_test.c main.c -o test -Dmain=_main
+Lab1: Lab1.c
+	gcc -o Lab1-2 Lab1-2.c -lm
+Lab1_Test: Lab1-2_T_test.c Lab1_Test.c
+	gcc Lab1-2_test.c Lab1-2.c -o Lab1-2_test -D TESTING -lm
