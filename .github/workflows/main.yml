@@ -14,9 +14,10 @@ jobs:
 
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
-     - uses: actions/checkout@v2
      - name: Checkout code
-     -  run: |
+     - uses: actions/checkout@v2
+     - name: run test
+     - run: |
           cd Lab1-2
           make test
           ./test
