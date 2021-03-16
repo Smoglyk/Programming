@@ -16,6 +16,6 @@ jobs:
       run: |
             cd Lab1
             make main_test
-    - run: |
-           cd Lab1 
-           ./main_test
+            ./main_test
+   
+           
