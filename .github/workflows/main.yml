@@ -13,6 +13,6 @@ jobs:
         uses: actions/checkout@v2
         
       - run: |
-          cd main/
+          cd Lab1-1/
           make test
           ./test
