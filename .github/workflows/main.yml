@@ -1,0 +1,21 @@
+name: Builder
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: |
+            cd Lab1
+            make main_test
+    - run: |
+           cd Lab1 
+           ./main_test
