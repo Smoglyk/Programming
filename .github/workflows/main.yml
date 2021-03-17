@@ -15,4 +15,4 @@ jobs:
       - run: |
           cd Lab1/
           make main_test
-          ./main_tes
+          ./main_test
