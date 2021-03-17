@@ -16,4 +16,3 @@ jobs:
           cd Lab2/
           make main_test
           ./main_test
-      
