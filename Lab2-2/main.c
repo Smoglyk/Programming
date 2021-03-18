@@ -8,7 +8,7 @@ int fact(int i)
   return i * fact(i - 1);
 }
 
-
+#ifndef TESTING
 
 int main(){
 
@@ -31,3 +31,4 @@ n -= 1;
 printf("%d",n);
 
 }
+#endif
