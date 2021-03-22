@@ -5,5 +5,6 @@
 #include <stdio.h>
 int cheakInput(int anw);
 double round(double x);
+int Correctinput();
 
 #endif
