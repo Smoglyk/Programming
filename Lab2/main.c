@@ -2,6 +2,17 @@
 #include "main.h"
 #include <math.h>
 
+int Correctinput()
+{
+    int temp;
+    char goodCheck;
+    while(!scanf("%d", &temp) || !scanf("%c", &goodCheck) || goodCheck != '\n')
+    {
+       printf("Wrong input! Please, try again: ");
+       fflush(stdin);
+    }
+    return temp;
+}
 
 int cheakInput(int anw)
 {
@@ -18,18 +29,18 @@ int cheakInput(int anw)
 
 double round(double x)
 { 
- double integer; 
- int clon = x, clon2 = x + 0.5;
- if( clon == clon2)
- {
-    integer = clon;
-   return integer;
- } 
- else
- {
- integer = clon2;
- return clon2;
- }
+    double integer; 
+    int clon = x, clon2 = x + 0.5;
+    if( clon == clon2)
+    {
+       integer = clon;
+       return integer;
+    } 
+    else
+    {
+       integer = clon2;
+       return clon2;
+    }
 }
 void input(float  *a, float *b)
 {
@@ -61,7 +72,7 @@ void output(float a, float b)
 {
     int answer;
     printf("What output you want: decimal(1), namerator(2), since form(3)\n");
-    scanf("%d", &answer);
+    answer = Correctinput();
     if(answer == 1)
     {
         int declimal = a / b;
@@ -87,8 +98,9 @@ int main()
     while(1)
     {
     printf("What is fuction you want apply\n: output(1), reverse(2),  shortForm(3), me(4), exit(5)\n");
-   scanf("%d", &answ);
-   cheakInput(answ);
+    answ = Correctinput();
+    cheakInput(answ);
+   
    switch (answ)
    {
      case 1:  output(a,b);
