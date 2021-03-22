@@ -12,7 +12,7 @@ void test_cheakDigital()
 
 int main()
 {
-	test_cheakDigital();
+    test_cheakDigital();
     printf("All ok");
-	return 0;
+    return 0;
 }
