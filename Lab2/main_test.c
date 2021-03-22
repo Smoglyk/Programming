@@ -12,7 +12,7 @@ void test_cheakInput()
 
 int main()
 {
-	test_cheakInput();
+    test_cheakInput();
     printf("Test done true");
 	return 0;
 }
