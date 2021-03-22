@@ -3,10 +3,10 @@
 
 void test_fact() 
 {
-    int check = Correctinput();
+    
     assert(fact(5) == 120);
     assert(fact(6) == 720);
-    assert(check || check == 0);
+    
 }
 
 #undef main
