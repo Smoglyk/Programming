@@ -2,6 +2,17 @@
 #include <math.h>
 #include "main.h"
 
+int Correctinput()
+{
+    int temp;
+    char goodCheck;
+    while(!scanf("%f", &temp) || !scanf("%c", &goodCheck) || goodCheck != '\n')
+    {
+       printf("Wrong input! Please, try again: ");
+       fflush(stdin);
+    }
+    return temp;
+}
 int fact(int i)
 {
   if(i==1) return(i);
@@ -9,15 +20,15 @@ int fact(int i)
 }
 
 #ifndef TESTING
-
-int main(){
+int main()
+{
 
 float e, x;
 int n;
 double comparition, talor;
 
-scanf("%f", &x);
-scanf("%f", &e);
+x = Correctinput();
+e = Correctinput();
 
 n=1;
 
@@ -29,6 +40,5 @@ do
 }  while(comparition>e);
 n -= 1;
 printf("%d",n);
-
 }
 #endif
