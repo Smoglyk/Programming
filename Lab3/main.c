@@ -98,5 +98,28 @@ int main()
             printf("\n");
             printf("\n");
         }
-    } 
+    }
+
+
+    for (i = 0; i < sizeX; i++)
+	{
+        for (j = 0; j < sizeY; i++)
+	         free(Cube[i][j]);
+    }
+    for (i = 0; i < sizeY; i++)
+	         free(Cube[i]);
+    
+    free(Cube);
+
+
+    for (i = 0; i < sizeX; i++)
+	{
+        for (j = 0; j < sizeY; i++)
+	         free(miniCube[i][j]);
+    }
+    for (i = 0; i < sizeY; i++)
+	         free(miniCube[i]);
+    
+    free(miniCube);
+     
 }
