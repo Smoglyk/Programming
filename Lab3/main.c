@@ -1,5 +1,22 @@
 #include "main.h"
+#include <malloc.h>
 
+void Matrix(int ***Cu, int x, int y, int z)
+{
+    int i = 0, j = 0, k = 0;
+    for (i = 0; i < x; i++)
+        {
+            for (j = 0; j < y; j++)
+            {
+                for (k = 0; k < z; k++)
+                {
+                    Cu[i][j][k] =  rand() % 2;
+                    
+                }
+            }
+        }
+    
+}
 int Correctinput()
 {
     int temp;
@@ -20,26 +37,34 @@ int Input01(int answer)
 }
 int main()
 {
-    int  Cube[8][8][8], i = 0, j = 0, k = 0, miniCube[4][4][4], answer;
+    int  i = 0, j = 0, k = 0, answer, sizeX = 8, sizeY = 8, sizeZ = 8, msizeX = 4, msizeY = 4, msizeZ = 4;
+
+    int ***Cube = (int***)malloc(sizeX * sizeof(int**));
+    for (i = 0; i < sizeX; i++)
+	{
+        Cube[i] = (int**)malloc(sizeY * sizeof(int*));
+        for (j = 0; j < sizeY; i++)
+	        Cube[i][j] = (int*)malloc(sizeZ * sizeof(int));
+    }
+
+
+    int ***miniCube = (int***)malloc(msizeX * sizeof(int**));
+    for (i = 0; i < msizeX; i++)
+	{
+        miniCube[i] = (int**)malloc(msizeY * sizeof(int*));
+        for (j = 0; j < msizeY; i++)
+	        miniCube[i][j] = (int*)malloc(msizeZ * sizeof(int));
+    }
+
+
     srand(time(NULL));
     printf("Are you want begin? Input 1(yes), 0(no).\n");
     answer =  Correctinput();
     Input01(answer);
     if(answer == 1)
     {
-        for (i = 0; i < 8; i++)
-        {
-            for (j = 0; j < 8; j++)
-            {
-                for (k = 0; k < 8; k++)
-                {
-                    Cube[i][j][k] =  rand() % 2;
-                    
-                }
-            }
-        }
+        Matrix(Cube, 8, 8, 8);
         
-    
         for (k = 0; k < 8; k++)
         {
             for (i = 0; i < 8; i++)
@@ -56,18 +81,8 @@ int main()
             printf("\n");
         }
 
-
-        for (i = 0; i < 4; i++)
-        {
-            for (j = 0; j < 4; j++)
-            {
-                for (k = 0; k < 4; k++)
-                {
-                    miniCube[i][j][k] = 1;
-                }
-            }
-        }
-        
+        Matrix(miniCube, 4, 4, 4);
+    
         for (k = 0; k < 4; k++)
         {
             for (i = 0; i < 4; i++)
