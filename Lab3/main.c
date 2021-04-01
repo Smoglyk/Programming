@@ -1,6 +1,23 @@
 #include "main.h"
 #include <malloc.h>
 
+
+int Check_Empty(int ***arr, int sizeX, int sizeY, int sizeZ)
+{
+    int  i = 0, j = 0, k = 0;
+    for(i; i < sizeX; i++)
+    {
+       for(j; j < sizeY; j++)
+       {
+           for(k; k < sizeZ; k++)
+           {
+               if(arr[i][j][k] != 0)
+               return 0;
+           }
+       }
+    }
+    return 1;
+}
 void Matrix(int ***Cu, int x, int y, int z)
 {
     int i = 0, j = 0, k = 0;
@@ -46,7 +63,7 @@ int main()
         for (j = 0; j < sizeY; i++)
 	        Cube[i][j] = (int*)malloc(sizeZ * sizeof(int));
     }
-
+    Check_Empty(Cube, sizeX, sizeY, sizeZ);
 
     int ***miniCube = (int***)malloc(msizeX * sizeof(int**));
     for (i = 0; i < msizeX; i++)
@@ -55,7 +72,7 @@ int main()
         for (j = 0; j < msizeY; i++)
 	        miniCube[i][j] = (int*)malloc(msizeZ * sizeof(int));
     }
-
+    Check_Empty(miniCube, msizeX, msizeY, msizeZ);
 
     srand(time(NULL));
     printf("Are you want begin? Input 1(yes), 0(no).\n");
