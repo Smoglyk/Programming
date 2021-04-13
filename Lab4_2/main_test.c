@@ -5,6 +5,8 @@ void Test()
 {
     int size = 10;
     char *c = (char *)malloc(size * sizeof(char));
+    if(c == 0)
+        exit(1);
 
     assert(isEmpty(c) == 1);
     
