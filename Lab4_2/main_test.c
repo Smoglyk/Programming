@@ -17,4 +17,5 @@ int main()
 {
     Test();
     printf("Test have done");
+    return 0;
 }
