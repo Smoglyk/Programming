@@ -27,7 +27,8 @@ int main()
     FILE *fp, *fp2;
 
     char*arr = (char*)malloc(sizeX * sizeof(char));
-    
+    if(arr == 0)
+        exit(1);
     
     isEmpty(arr);
 
