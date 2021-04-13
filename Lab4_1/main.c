@@ -57,9 +57,13 @@ int main()
    int i, j, sizeX = 2, sizeY = 8;
 
    char**Arr = (char**)malloc(sizeX * sizeof(char**));
+   if(Arr == 0)
+	   exit(1);
    for(i = 0; i < sizeX; i++)
    {
        Arr[i] = (char*)malloc(sizeY * sizeof(char*));
+	if(Arr[i] == 0)
+	   exit(1);
    }
    Check_Empty(Arr, sizeX);
 
