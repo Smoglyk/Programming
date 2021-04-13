@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+
+name: lab4_2test
+
+on: push
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - run: |
+          cd Lab4_2/
+          make main_test
+          ./main_test
