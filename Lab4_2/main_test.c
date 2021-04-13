@@ -7,6 +7,8 @@ void Test()
     char *c = (char *)malloc(size * sizeof(char));
 
     assert(isEmpty(c) == 1);
+    
+    free(c);
 }
 
 #undef main
