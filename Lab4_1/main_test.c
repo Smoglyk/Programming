@@ -9,17 +9,8 @@ void Check_Test()
        Arr[i] = (char*)malloc(sizeY * sizeof(char));
    }
 
-   assert(Check_Empty(Arr, sizeX, sizeY) == 1);
-
-   for(i = 0; i < sizeX; i++)
-   {
-       for(j = 0; j < sizeY; j++)
-       {
-           Arr[i][j] = 'a';
-       }
-   }
+   assert(Check_Empty(Arr, sizeX) == 1);
    
-   assert(Check_Empty(Arr, sizeX, sizeY) == 0);
    assert(Check(Arr, sizeX, sizeY) == 1);
    
    for (i = 0; i < sizeX; i++)
