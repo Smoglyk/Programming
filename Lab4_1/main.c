@@ -1,14 +1,16 @@
-
 #include "main.h"
 
-int Check_Empty(char **arr,int sizeX,int sizeY)
+int Check_Empty(char **arr,int sizeX)
 {
    int i, y;
+   if(!arr)
+   {
+       return 0;
+   }
    for(i = 0; i < sizeX; i++)
    {
-       for(y = 0; y < sizeY; y++)
+       if(!arr[i])
        {
-           if(arr[i][y] != 0)
            return 0;
        }
    }
@@ -57,9 +59,9 @@ int main()
    char**Arr = (char**)malloc(sizeX * sizeof(char**));
    for(i = 0; i < sizeX; i++)
    {
-       Arr[i] = (char*)malloc(sizeY * sizeof(char));
+       Arr[i] = (char*)malloc(sizeY * sizeof(char*));
    }
-   Check_Empty(Arr, sizeX, sizeY);
+   Check_Empty(Arr, sizeX);
 
    for(i = 0; i < sizeX; i++)
    {
