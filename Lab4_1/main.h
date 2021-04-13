@@ -6,5 +6,6 @@
 #include <malloc.h>
 
 int Check(char**arr, int sizeX, int sizeY);
+int Check_Empty(char **arr, int sizeX);
 
 #endif
