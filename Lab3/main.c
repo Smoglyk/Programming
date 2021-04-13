@@ -7,13 +7,14 @@ int Check_Empty(int ***arr, int sizeX, int sizeY, int sizeZ)
     int  i = 0, j = 0, k = 0;
     for(i; i < sizeX; i++)
     {
-       for(j; j < sizeY; j++)
+       if(!arr[i])
        {
-           for(k; k < sizeZ; k++)
-           {
-               if(arr[i][j][k] != 0)
-               return 0;
-           }
+           return 0;
+       }
+       for(j; j < sizeY; j++)
+       {  
+             if(!arr[i][j])
+                return 0;
        }
     }
     return 1;
@@ -55,27 +56,50 @@ int Input01(int answer)
 int main()
 {
     int  i = 0, j = 0, k = 0, answer, sizeX = 8, sizeY = 8, sizeZ = 8, msizeX = 4, msizeY = 4, msizeZ = 4;
-
+    
     int ***Cube = (int***)malloc(sizeX * sizeof(int**));
+    if(Cube == 0)
+    {
+        exit(1);
+    }
     for (i = 0; i < sizeX; i++)
 	{
         Cube[i] = (int**)malloc(sizeY * sizeof(int*));
-        for (j = 0; j < sizeY; i++)
-	        Cube[i][j] = (int*)malloc(sizeZ * sizeof(int));
+        if(Cube[i] == 0)
+            exit(1);
+        for (j = 0; j < sizeY; j++)
+        {
+            Cube[i][j] = (int*)malloc(sizeZ * sizeof(int));
+            if(Cube[i][j] == 0)
+                exit(1);
+        }
+	        
+
     }
-    Check_Empty(Cube, sizeX, sizeY, sizeZ);
+    
 
     int ***miniCube = (int***)malloc(msizeX * sizeof(int**));
+    if(miniCube == 0)
+        exit(1);
     for (i = 0; i < msizeX; i++)
 	{
         miniCube[i] = (int**)malloc(msizeY * sizeof(int*));
-        for (j = 0; j < msizeY; i++)
-	        miniCube[i][j] = (int*)malloc(msizeZ * sizeof(int));
+        if(miniCube[i] == 0)
+            exit(1);
+        for (j = 0; j < msizeY; j++)
+        {
+            miniCube[i][j] = (int*)malloc(msizeZ * sizeof(int));
+            if(miniCube[i][j] == 0)
+                exit(1);
+        }
+	        
     }
-    Check_Empty(miniCube, msizeX, msizeY, msizeZ);
-
+    
     srand(time(NULL));
     printf("Are you want begin? Input 1(yes), 0(no).\n");
+    Check_Empty(Cube, sizeX, sizeY, sizeZ);
+    Check_Empty(miniCube, msizeX, msizeY, msizeZ);
+
     answer =  Correctinput();
     Input01(answer);
     if(answer == 1)
@@ -115,8 +139,6 @@ int main()
             printf("\n");
             printf("\n");
         }
-    }
-
 
     for (i = 0; i < sizeX; i++)
 	{
@@ -138,5 +160,5 @@ int main()
 	         free(miniCube[i]);
     
     free(miniCube);
-     
+    }  
 }
