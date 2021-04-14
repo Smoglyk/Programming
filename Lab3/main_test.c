@@ -12,9 +12,11 @@ void test_cheakInput()
 	if(Cube[i] == 0)
 	    exit(1);
         for (j = 0; j < sizeY; j++)
+	{
 	        Cube[i][j] = (int*)malloc(sizeZ * sizeof(int));
 	    	if(Cube[i][j] == 0)
 	    	    exit(1);
+	}
     }
 
     assert(Input01(1) == 1);
