@@ -17,11 +17,10 @@ void test_cheakInput()
 
     for (i = 0; i < sizeX; i++)
 	{
-        for (j = 0; j < sizeY; i++)
+        for (j = 0; j < sizeY; j++)
 	         free(Cube[i][j]);
+	free(Cube[i]);
     }
-    for (i = 0; i < sizeY; i++)
-	         free(Cube[i]);
     
     free(Cube);
     
