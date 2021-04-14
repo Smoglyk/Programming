@@ -142,22 +142,20 @@ int main()
 
     for (i = 0; i < sizeX; i++)
 	{
-        for (j = 0; j < sizeY; i++)
+        for (j = 0; j < sizeY; j++)
 	         free(Cube[i][j]);
     }
-    for (i = 0; i < sizeY; i++)
-	         free(Cube[i]);
     
     free(Cube);
 
 
     for (i = 0; i < sizeX; i++)
 	{
-        for (j = 0; j < sizeY; i++)
+        for (j = 0; j < sizeY; j++)
 	         free(miniCube[i][j]);
+	free(miniCube[i]);
     }
-    for (i = 0; i < sizeY; i++)
-	         free(miniCube[i]);
+
     
     free(miniCube);
     }  
