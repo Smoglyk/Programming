@@ -57,7 +57,7 @@ public:
         {
             List_queue* kill = head;
             head = head->Npoint;
-            if(tail != nullptr)
+            if(head != nullptr)
                 head->Ppoint = nullptr;
             delete kill;
         }
