@@ -54,7 +54,6 @@ void Tree<T>::clear(Node<T>* roof)
         clear(roof->left);
         clear(roof->right);
         delete roof;
-        cout << "All delete\n";
     }
 }
 
