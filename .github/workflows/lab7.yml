@@ -1,0 +1,20 @@
+name: lab6test
+
+on: push
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - run: |
+          cd Lab6/
+          make main_test
+          ./main_test
+          gcov main.cpp -r
+          bash <(curl -s https://codecov.io/bash)
