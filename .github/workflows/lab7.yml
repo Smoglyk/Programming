@@ -1,4 +1,4 @@
-name: lab6test
+name: lab7test
 
 on: push
 
@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
         
       - run: |
-          cd Lab6/
+          cd Lab7/
           make main_test
           ./main_test
           gcov main.cpp -r
